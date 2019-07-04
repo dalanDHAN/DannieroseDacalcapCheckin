@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aircraft Airline</title>
+  <style>
+    /* Center website */
+    .main {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 50px;
+      word-break: break-all;
+    }
+    
+h2{
+  font-size: 25px;
+  word-break: break-all;
+  color: white;
+}
+    .row {
+      margin: 8px -16px;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row>.column {
+      padding: 8px;
+    }
+
+    /* Create four equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+    }
+
+    /* Clear floats after rows */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Content */
+    .content {
+      background-color: white;
+      padding: 10px;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 900px) {
+      .column {
+        width: 50%;
+      }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+
+
+    .button {
+      border-radius: 4px;
+      background-color: #2699FB;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 26px;
+      padding: 20px;
+      width: inherit;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .button a {
+      border-radius: 4px;
+      background-color: #2699FB;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 26px;
+      padding: 20px;
+      width: inherit;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+      text-decoration: none;
+    }
+
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button:hover span {
+      padding-right: 50px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #7FC4FD;
+    }
+
+    .bg-img {
+      /* The image used */
+      background-image: url("air.png");
+
+      min-height: 500px;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      position: relative;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Button used to open the contact form - fixed at the bottom of the page */
+    .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+
+    /* The popup form - hidden by default */
+    .form-popup {
+      display: none;
+      position: fixed;
+      top: 25%;
+      left: 700px;
+      border: 3px solid #f1f1f165;
+      z-index: 9;
+      width: 35%;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+      padding: 10px;
+      background-color: rgba(38, 152, 251, 0.466);
+    }
+
+    /* Full-width input fields */
+    .form-container input[type=text],
+    .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus,
+    .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color:  #2699FB;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      opacity: 0.8;
+      text-decoration: none;
+    }
+
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    }
+    a{
+      color: white;
+      font-display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- MAIN (Center website) -->
+  <div class="main">
+
+    <h1>Aircraft Airline</h1>
+    <hr>
+    <div class="bg-img">
+      <button class="button"><span> Book a Flight </span></button>
+      <button class="button" onclick="openForm()"><span> Check-In </span></button>
+    </div>
+    <div class="form-popup" id="myForm">
+      <form action="checkin.html" class="form-container">
+        <h2>Booking Reference Number</h2>
+
+        <input type="text" placeholder="Reference Number" required>
+
+        <center><button type="submit" class="btn">Continue</button></center>
+        
+        <button type="submit" class="btn"><center><a href="checkin.html">Select the flight you want to check-in.</a></center></button>
+      </form>
+    </div>
+
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+    </script>
+
+  </div>
+</body>
+
+</html>

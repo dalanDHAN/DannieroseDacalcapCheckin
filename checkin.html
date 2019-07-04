@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aircraft Airline</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #7FC4FD;
+      padding: 20px;
+      font-family: Arial;
+    }
+
+    /* Center website */
+    .main {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 50px;
+      word-break: break-all;
+    }
+
+    .row {
+      margin: 8px -16px;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row>.column {
+      padding: 8px;
+    }
+
+    /* Create four equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+    }
+
+    /* Clear floats after rows */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Content */
+    .content {
+      background-color: white;
+      padding: 10px;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 900px) {
+      .column {
+        width: 50%;
+      }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+
+    button {
+      border-radius: 4px;
+      background-color: #2699FB;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 26px;
+      padding: 10px;
+      width: 90%;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+      text-align: center;
+    }
+
+    button a {
+      border-radius: 4px;
+      background-color: #2699FB;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 26px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MAIN (Center website) -->
+  <div class="main">
+
+    <h1>Aircraft Airline</h1>
+    <hr>
+
+    <h3>Select the flight you want to check-in</h3>
+    <p>You are only allowed to check-in one flight at a time.</p>
+
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+      <div class="column">
+        <div class="content">
+          <img src="1.png" alt="Mountains" style="width:100%">
+          <center><button><a href="pass.html">Check-In</button></a></center>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <img src="2.png" alt="Lights" style="width:100%">
+          <center><button>Check-In</button></center>
+        </div>
+      </div>
+      <!-- END GRID -->
+    </div>
+    <!-- END MAIN -->
+  </div>
+
+</body>
+
+</html>

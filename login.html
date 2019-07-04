@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aircraft Airline</title>
+  <link rel="stylesheet" href="log.css">
+  <style>
+    body {
+      background-color: #7FC4FD;
+      padding: 20px;
+      font-family: Arial;
+    }
+
+    /* Center website */
+    .main {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 50px;
+      word-break: break-all;
+    }
+
+    .row {
+      margin: 8px -16px;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row>.column {
+      padding: 8px;
+    }
+
+    /* Create four equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+    }
+
+    /* Clear floats after rows */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Content */
+    .content {
+      background-color: white;
+      padding: 10px;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 900px) {
+      .column {
+        width: 50%;
+      }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #2196F3;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .topnav .login-container {
+      float: right;
+      padding-top: 5px;
+    }
+
+    .topnav input[type=text] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: none;
+      width: 120px;
+    }
+
+    .topnav input[type=password] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: none;
+      width: 120px;
+    }
+
+    .topnav .login-container button {
+      float: right;
+      padding: 6px 10px;
+      margin-top: 8px;
+      margin-right: 16px;
+      background-color: #555;
+      color: white;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .topnav .login-container button:hover {
+      background-color: #BCE0FD;
+      color: rgb(46, 45, 45);
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav .login-container {
+        float: none;
+      }
+
+      .topnav a,
+      .topnav input[type=text],
+      .topnav .login-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+      }
+
+      .topnav input[type=text] {
+        border: 1px solid #ccc;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MAIN (Center website) -->
+  <div class="main">
+    <div class="topnav">
+      <a class="active"> Aircraft Airline</a> 
+      <div class="login-container">
+        <form action="check.html">
+          <input type="text" placeholder="Enter Email" name="username">
+          <input type="password" placeholder="Password" name="psw">
+          <button>Login</button>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <div class="bg-img">
+    <form action="check.html" >
+      <div class="container">
+        <h2>Register</h2>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        <hr>
+        <center><p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p></center>
+
+      <button type="submit" class="registerbtn"><a href="check.html"> Register</a></button>
+      </div> 
+    </form>
+</div>
+  </div>
+
+</body>
+
+</html>
